@@ -2,33 +2,33 @@ package task_5.logic;
 
 public class Calculator implements Add, Subtract, Multiply, Divide {
 
-    private float a;
-    private float b;
+    private int a;
+    private int b;
     private String operator;
 
     public Calculator() {
         super();
     }
 
-    public Calculator(float a, float b, String operator) {
+    public Calculator(int a, int b, String operator) {
         this.a = a;
         this.b = b;
         this.operator = operator;
     }
 
-    public float getA() {
+    public int getA() {
         return a;
     }
 
-    public void setA(float a) {
+    public void setA(int a) {
         this.a = a;
     }
 
-    public float getB() {
+    public int getB() {
         return b;
     }
 
-    public void setB(float b) {
+    public void setB(int b) {
         this.b = b;
     }
 
@@ -40,19 +40,19 @@ public class Calculator implements Add, Subtract, Multiply, Divide {
         this.operator = operator;
     }
 
-    public float add(float a, float b) {
+    public int add(int a, int b) {
         return a + b;
     }
 
-    public float subtract(float a, float b) {
+    public int subtract(int a, int b) {
         return a - b;
     }
 
-    public float multiply(float a, float b) {
+    public int multiply(int a, int b) {
         return a * b;
     }
 
-    public float divide(float a, float b) {
+    public int divide(int a, int b) {
         return a / b;
     }
 }

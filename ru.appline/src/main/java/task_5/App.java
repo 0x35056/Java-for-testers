@@ -3,24 +3,34 @@ package task_5;
 import task_5.logic.Calculator;
 import task_5.logic.Model;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
+
+/** 10 + 5 */
 
 public class App {
 
+    private static final Scanner scan = new Scanner(System.in);
+    private static final Model model = Model.getInstance();
+    private static final Calculator calc = new Calculator();
+
     public static void main(String[] args) {
 
-        Model model = Model.getInstance();
-        Calculator calc = new Calculator();
-        Scanner scan = new Scanner(System.in);
+        try {
 
-        calc.setA(scan.nextInt());
-        calc.setOperator(scan.next());
-        calc.setB(scan.nextInt());
+            calc.setA(scan.nextInt());
+            calc.setOperator(scan.next());
+            calc.setB(scan.nextInt());
 
-        float a = calc.getA();
-        float b = calc.getB();
-        String operator = calc.getOperator();
+            int a = calc.getA();
+            int b = calc.getB();
+            String operator = calc.getOperator();
 
-        model.print(a, b, operator);
+            model.print(a, b, operator);
+
+        } catch (InputMismatchException e) {
+
+            System.out.println("Error: please enter through spaces");
+        }
     }
 }

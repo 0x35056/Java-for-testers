@@ -2,7 +2,7 @@ package task_5.logic;
 
 public class Model {
 
-    private static float result;
+    private static int result;
     private static final Model instance = new Model();
     private static final Calculator calc = new Calculator();
 
@@ -10,7 +10,7 @@ public class Model {
         return instance;
     }
 
-    public float parse(float a, float b, String operator){
+    public int parse(int a, int b, String operator){
         if ("+".equals(operator)) {
             result = calc.add(a, b);
         } else if ("-".equals(operator)) {
@@ -24,7 +24,11 @@ public class Model {
         return result;
     }
 
-    public void print(float a, float b, String operator) {
-        System.out.print(parse(a, b, operator));
+    public void print(int a, int b, String operator) {
+        try {
+            System.out.print(parse(a, b, operator));
+        } catch (ArithmeticException e) {
+            System.out.println("Error: division by zero");
+        }
     }
 }
